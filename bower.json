@@ -1,0 +1,23 @@
+{
+  "name": "image-box",
+  "version": "0.0.0",
+  "homepage": "https://github.com/EVelikij/image-box",
+  "authors": [
+    "EVelikij <evelikij@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "install": {
+    "path": {
+      "css": "public/stylesheets/vendors",
+      "js": "public/javascripts/vendors"
+    }
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
