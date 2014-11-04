@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>image box</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/vendors/bootstrap/bootstrap.css' />
+
+    <script type="text/javascript" src='/javascripts/vendors/angular/angular.js'></script>
+    <script type="text/javascript" src='/javascripts/vendors/angular-ui-router/angular-ui-router.js'></script>
+    <script type="text/javascript" src='/javascripts/app.js'></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body ng-app="image-box">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          Header
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- navigation menu -->
+        <div class="col-md-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item">My Galleries</a>      
+            <a href="#" class="list-group-item">Social</a>      
+            <a href="#" class="list-group-item">Messages</a>      
+            <a href="#" class="list-group-item">Settings</a>      
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="col-md-9">
+          content
+        </div>
+      </div>
+    </div>
+    
   </body>
 </html>
