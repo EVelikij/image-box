@@ -23,16 +23,16 @@
         <!-- navigation menu -->
         <div class="col-md-3">
           <div class="list-group">
-            <a href="#" class="list-group-item">My Galleries</a>      
-            <a href="#" class="list-group-item">Social</a>      
-            <a href="#" class="list-group-item">Messages</a>      
-            <a href="#" class="list-group-item">Settings</a>      
+            <a href="#" class="list-group-item" ui-sref="galleries">My Galleries</a>      
+            <a href="#" class="list-group-item" ui-sref="social">Social</a>      
+            <a href="#" class="list-group-item" ui-sref="messages">Messages</a>      
+            <a href="#" class="list-group-item" ui-sref="settings">Settings</a>      
           </div>
         </div>
 
         <!-- content -->
         <div class="col-md-9">
-          content
+          <div ui-view></div>
         </div>
       </div>
     </div>
