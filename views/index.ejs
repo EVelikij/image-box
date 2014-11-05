@@ -7,8 +7,10 @@
 
     <script type="text/javascript" src='/javascripts/vendors/angular/angular.js'></script>
     <script type="text/javascript" src='/javascripts/vendors/angular-ui-router/angular-ui-router.js'></script>
-    <script type="text/javascript" src='/javascripts/app.js'></script>
-    <script type="text/javascript" src='/javascripts/directives/sidebar-nav.js'></script>
+    
+    <% for (var i=0; i < js.length; i++) { %>
+      <script type="text/javascript" src='<%= js[i] %>'></script>  
+    <% } %>
   </head>
   <body ng-app="image-box">
 
