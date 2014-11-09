@@ -19,8 +19,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(require('less-middleware')(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('less-middleware')(path.join(__dirname, 'dest')));
+app.use(express.static(path.join(__dirname, 'dest')));
+
+  app.use(require('connect-livereload')({
+    port: 35729
+  }));
 
 app.use('/', routes);
 app.use('/users', users);

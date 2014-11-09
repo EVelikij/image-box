@@ -1,4 +1,4 @@
-app.directive('boxSidebarNav', function($rootScope, $location) {
+module.exports = function($rootScope, $location) {
   return {
     restrict: 'A',
     scope: {},
@@ -13,4 +13,4 @@ app.directive('boxSidebarNav', function($rootScope, $location) {
       });
     }
   }
-});
+};

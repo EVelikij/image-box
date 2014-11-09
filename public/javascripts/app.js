@@ -1,5 +1,8 @@
-var app = angular.module('image-box', ['ui.router']);
+var angular = require('angular');
+var uiRouter = require('angular-ui-router');
 
+var app = angular.module('image-box', ['ui.router']);
+ console.log('hello world');
 app.config(function($stateProvider) {
   $stateProvider
     .state('galleries', {
@@ -19,3 +22,5 @@ app.config(function($stateProvider) {
       templateUrl: 'partials/settings.html'
     })
 });
+
+app.directive('boxSidebarNav', require('./directives/sidebar-nav'));
