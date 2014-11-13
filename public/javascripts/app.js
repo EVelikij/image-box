@@ -2,7 +2,6 @@ var angular = require('angular');
 var uiRouter = require('angular-ui-router');
 
 var app = angular.module('image-box', ['ui.router']);
- console.log('hello world');
 app.config(function($stateProvider) {
   $stateProvider
     .state('galleries', {

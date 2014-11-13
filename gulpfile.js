@@ -1,20 +1,11 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
-var livereload = require('tiny-lr')();
+var refresh = require('gulp-livereload');
 
-function notifyLivereload(event) {
-  var fileName = require('path').relative(__dirname, event.path);
-  console.log('Reloading ' + fileName);
-  livereload.changed({
-    body: {
-      files: [fileName]
-    }
-  });
-}
-
-gulp.task('scripts', function() {
+gulp.task('browserify', function() {
   gulp.src('public/javascripts/app.js')
     .pipe(browserify({
+      insertGlobals: true,
       debug: true,
       shim: {
         angular: {
@@ -24,13 +15,12 @@ gulp.task('scripts', function() {
       }
     }))
     .pipe(gulp.dest('dest/js'));
-
-  console.log('browserify complete')
 });
 
 gulp.task('static', function() {
   gulp.src('public/partials/**/*.html')
     .pipe(gulp.dest('dest/partials'));
+    
   gulp.src('public/stylesheets/**/*.css')
     .pipe(gulp.dest('dest/stylesheets'));
 })
@@ -40,16 +30,17 @@ gulp.task('express', function() {
   var app = require('./app');
 
   app.listen(3000);
+  refresh.listen(35729);
 });
 
-gulp.task('livereload', function() {
-  livereload.listen(35729);
-})
-
 gulp.task('watch', function() {
-  var jsWatcher = gulp.watch('./public/javascripts/**/*.js', ['scripts']);
+  // watch changes on frontend scripts
+  gulp.watch('./public/javascripts/**/*.js', ['browserify']);
 
-  jsWatcher.on('change', notifyLivereload);
+  gulp.watch('./public/partials/**/*.html', ['static']);
+  gulp.watch('./public/stylesheets/**/*.css', ['static']);
+  
+  gulp.watch('./dest/**', refresh.changed);
 })
 
-gulp.task('default', ['express', 'livereload', 'watch', 'scripts', 'static']);
+gulp.task('default', ['express', 'watch', 'browserify', 'static']);
