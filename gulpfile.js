@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var refresh = require('gulp-livereload');
+var less = require('gulp-less');
+var path = require('path');
 
 gulp.task('browserify', function() {
   gulp.src('public/javascripts/app.js')
@@ -16,6 +18,12 @@ gulp.task('browserify', function() {
     }))
     .pipe(gulp.dest('dest/js'));
 });
+
+gulp.task('less', function() {
+  gulp.src('./public/stylesheets/**/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('./dest/stylesheets'))
+})
 
 gulp.task('static', function() {
   gulp.src('public/partials/**/*.html')
@@ -39,6 +47,7 @@ gulp.task('watch', function() {
 
   gulp.watch('./public/partials/**/*.html', ['static']);
   gulp.watch('./public/stylesheets/**/*.css', ['static']);
+  gulp.watch('./public/stylesheets/**/*.less', ['less']);
   
   gulp.watch('./dest/**', refresh.changed);
 })
