@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>image box</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/vendors/bootstrap/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <script type="text/javascript" src='/js/app.js'></script>
   </head>
@@ -21,8 +21,8 @@
       <div class="row">
 
         <!-- sidebar menu -->
-        <div class="col-md-3">
-          <div class="list-group">
+        <div class="col-md-3" id="sidebar">
+          <div class="list-group" id="sidebarMenu">
             <a href="#" class="list-group-item" ui-sref="galleries" box-sidebar-nav>My Galleries</a>      
             <a href="#" class="list-group-item" ui-sref="social" box-sidebar-nav>Social</a>      
             <a href="#" class="list-group-item" ui-sref="messages" box-sidebar-nav>Messages</a>      
@@ -31,7 +31,7 @@
         </div>
 
         <!-- content -->
-        <div class="col-md-9">
+        <div class="col-md-9" id="mainContent">
           <div ui-view></div>
         </div>
       </div>
