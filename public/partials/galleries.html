@@ -1,1 +1,7 @@
-This is my galleries
+<div ng-controller="galleriesCtrl">
+  <ul class="list-inline" id="galleriesList">
+    <li ng-repeat="item in data.facebook">
+      <img src="{{item.thumb}}" />
+    </li>
+  </ul>
+</div>

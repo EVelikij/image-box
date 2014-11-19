@@ -23,3 +23,5 @@ app.config(function($stateProvider) {
 });
 
 app.directive('boxSidebarNav', require('./directives/sidebar-nav'));
+
+app.controller('galleriesCtrl', require('./controllers/galleriesCtrl'));
