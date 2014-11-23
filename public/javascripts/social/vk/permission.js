@@ -1,0 +1,22 @@
+module.exports = {
+  NOTIFY:         0x1 << 0,
+  FRIENDS:        0x1 << 1,
+  PHOTOS:         0x1 << 2,
+  AUDIO:          0x1 << 3,
+  VIDEO:          0x1 << 4,
+  OFFERS:         0x1 << 5,
+  QUESTIONS:      0x1 << 6,
+  PAGES:          0x1 << 7,
+  SIDEBAR:        0x1 << 8,
+  STATUS:         0x1 << 10,
+  NOTES:          0x1 << 11,
+  MESSAGES:       0x1 << 12,
+  WALL:           0x1 << 11,
+  ADS:            0x1 << 13,
+  OFFLINE:        0x1 << 15,
+  DOCS:           0x1 << 16,
+  GROUPS:         0x1 << 17,
+  NOTIFICATIONS:  0x1 << 18,
+  STATS:          0x1 << 19,
+  EMAIL:          0x1 << 21
+};

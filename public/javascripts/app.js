@@ -25,3 +25,7 @@ app.config(function($stateProvider) {
 app.directive('boxSidebarNav', require('./directives/sidebar-nav'));
 
 app.controller('galleriesCtrl', require('./controllers/galleriesCtrl'));
+app.controller('socialCtrl', require('./controllers/socialCtrl'));
+
+app.constant('vkPermission', require('./social/vk/permission'));
+app.constant('vkClient', require('./social/vk/client'));
